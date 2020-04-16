@@ -17,30 +17,17 @@ const NseNavigator = () =>{
     return(
         <NavigationContainer>
             <Stack.Navigator>
+                <Stack.Screen name="Department" component={DepartmentalLibraryScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
-                <Stack.Screen name="Register" component={RegistrationScreen} options={{headerShown: true}} />
-                <Stack.Screen name="Newsfeed" component={NewsFeedScreen} />
-                <Stack.Screen name="Elibrary" component={ElibraryScreen} />
-                <Stack.Screen name="Department" component={DepartmentalLibraryScreen} />
-                <Stack.Screen name="Community" component={FupreCommunityScreen} />
+                <Stack.Screen name="Register" component={RegistrationScreen} />
+                <Stack.Screen name="Newsfeed" component={NewsFeedScreen} options={{headerShown: false}} />
+                <Stack.Screen name="Elibrary" component={ElibraryScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="Community" component={FupreCommunityScreen} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
 }
 
 export default NseNavigator
-
-// Login:{
-//     screen:LoginScreen
-// },
-// Signup: {
-//     screen:RegistrationScreen
-// },
-// Newsfeed: {
-//     screen:NewsFeedScreen,
-// },
-// Elibrary: ElibraryScreen,
-// Department:{
-//     screen:DepartmentalLibraryScreen
-// },
+ 

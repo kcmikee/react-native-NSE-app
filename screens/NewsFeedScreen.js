@@ -1,18 +1,473 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Platform, Image,TouchableHighlight, ScrollView } from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons";
 
-const NewsFeedScreen = () => {
+const NewsFeedScreen = props => {
     return (
         <View style={styles.screen}>
-            <Text>This is the newsfeed
-            yarn add react-native-paper
-            </Text>
-            <Icon
-                name="ios-add"
-                color="#000"
-                size={25}
-                />
+            <Image style={styles.bgImage} source={require('../assets/images/WALLPAPER.png')} />
+            <View style={styles.header}>
+                <View style={styles.left}>
+                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
+                            color="#fff"
+                            size={25}
+                        />
+                    </TouchableHighlight>
+                    <Text onpress={()=> props.navigation.navigate('Newsfeed')} style={styles.logo}>eHUB</Text> 
+                </View>
+                <View style={styles.right}>
+                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>                           
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-notifications" : "md-notifications"}
+                            color="#fff"
+                            size={25}
+                        />
+                    </TouchableHighlight>
+                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+                            color="#fff"
+                            size={25}
+                        />
+                    </TouchableHighlight>
+                </View>
+            </View>
+            <View style={styles.nav}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                    <Text style={{fontWeight:'bold'}}> Just In </Text>
+                </TouchableHighlight> 
+                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                    <Text> Top Stories </Text>
+                </TouchableHighlight> 
+                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                    <Text> Department </Text>
+                </TouchableHighlight> 
+                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                    <Text> Programs </Text>
+                </TouchableHighlight> 
+                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('Community')}>
+                    <Text> Community </Text>
+                </TouchableHighlight> 
+                <Icon
+                    name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                    color="#000"
+                    size={25}
+                />   
+            </View>
+            <ScrollView>
+            <View style={styles.feeds}>
+                <View style={styles.feedsText}>
+                    <View style={styles.feedsUpdates}>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                    </View>
+                    <View stlye={styles.feedBody}>
+                        <Text style={{textAlign: 'justify',}}> 
+                           Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
+                        </Text>
+                    </View>
+                    <View style={styles.feedsIcon}>
+                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-share" : "md-share"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-time" : "md-time"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                    </View>
+                </View>
+                <View style={styles.feedsImage}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                            color="#000"
+                            size={20}
+                        />
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Text> Follow </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View >
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                    </View>
+                </View>
+            </View>
+
+            <Text> {'\n'} </Text>
+
+            <View style={styles.feeds}>
+                <View style={styles.feedsText}>
+                    <View style={styles.feedsUpdates}>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                    </View>
+                    <View stlye={styles.feedBody}>
+                        <Text style={{textAlign: 'justify',}}> 
+                           Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
+                        </Text>
+                    </View>
+                    <View style={styles.feedsIcon}>
+                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-share" : "md-share"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-time" : "md-time"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                    </View>
+                </View>
+                <View style={styles.feedsImage}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                            color="#000"
+                            size={20}
+                        />
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Text> Follow </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View >
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                    </View>
+                </View>
+            </View>
+
+            <Text> {'\n'} </Text>
+
+            <View style={styles.feeds}>
+                <View style={styles.feedsText}>
+                    <View style={styles.feedsUpdates}>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                    </View>
+                    <View stlye={styles.feedBody}>
+                        <Text style={{textAlign: 'justify',}}> 
+                           Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
+                        </Text>
+                    </View>
+                    <View style={styles.feedsIcon}>
+                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-share" : "md-share"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-time" : "md-time"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                    </View>
+                </View>
+                <View style={styles.feedsImage}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                            color="#000"
+                            size={20}
+                        />
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Text> Follow </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View >
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                    </View>
+                </View>
+            </View>
+
+            <Text> {'\n'} </Text>
+
+            <View style={styles.feeds}>
+                <View style={styles.feedsText}>
+                    <View style={styles.feedsUpdates}>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                    </View>
+                    <View stlye={styles.feedBody}>
+                        <Text style={{textAlign: 'justify',}}> 
+                           Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
+                        </Text>
+                    </View>
+                    <View style={styles.feedsIcon}>
+                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-share" : "md-share"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-time" : "md-time"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                    </View>
+                </View>
+                <View style={styles.feedsImage}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                            color="#000"
+                            size={20}
+                        />
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Text> Follow </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View >
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                    </View>
+                </View>
+            </View>
+
+            <Text> {'\n'} </Text>
+
+            <View style={styles.feeds}>
+                <View style={styles.feedsText}>
+                    <View style={styles.feedsUpdates}>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                    </View>
+                    <View stlye={styles.feedBody}>
+                        <Text style={{textAlign: 'justify',}}> 
+                           Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
+                        </Text>
+                    </View>
+                    <View style={styles.feedsIcon}>
+                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-share" : "md-share"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-time" : "md-time"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                    </View>
+                </View>
+                <View style={styles.feedsImage}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                            color="#000"
+                            size={20}
+                        />
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Text> Follow </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View >
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                    </View>
+                </View>
+            </View>
+
+            <Text> {'\n'} </Text>
+
+            <View style={styles.feeds}>
+                <View style={styles.feedsText}>
+                    <View style={styles.feedsUpdates}>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                    </View>
+                    <View stlye={styles.feedBody}>
+                        <Text style={{textAlign: 'justify',}}> 
+                           Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
+                        </Text>
+                    </View>
+                    <View style={styles.feedsIcon}>
+                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-share" : "md-share"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight>
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-time" : "md-time"}
+                                color="#000"
+                                size={25}
+                            />
+                        </TouchableHighlight> 
+                    </View>
+                </View>
+                <View style={styles.feedsImage}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+                            color="#000"
+                            size={20}
+                        />
+                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                            <Text> Follow </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <View >
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                    </View>
+                </View>
+            </View>
+
+            <Text> {'\n'} </Text>
+
+
+            </ScrollView>
+
         </View>
     )
 }
@@ -21,8 +476,81 @@ export default NewsFeedScreen
 
 const styles = StyleSheet.create({
     screen:{
-         flex: 1, 
-         alignItems: 'center', 
-         justifyContent: 'center' 
-    }
+        flex: 1,
+    },
+    bgImage:{
+        flex: 1,
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+      },
+    header:{
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        backgroundColor: '#9d9d9d'
+    },
+    logo:{
+        fontWeight: 'bold',
+        fontSize: 20,
+        fontFamily: 'segoe script',
+        marginTop:13,
+        color: '#fff'
+    },
+    left:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 20,
+    },
+    right:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 25,
+    },
+    links1:{
+        padding:14
+    },
+    links:{
+        paddingBottom:13,
+        
+    },
+    navlinks:{
+        paddingBottom: 14,
+        paddingTop:5,
+    },
+    nav:{
+        width:'100%',
+        height: 30,
+        flexDirection: 'row',
+        backgroundColor: '#f0f0f0',
+        justifyContent: 'space-evenly',
+    },
+    feeds:{
+        flexDirection: 'row',
+        paddingLeft: 14,
+        paddingLeft: 14,
+        backgroundColor: '#c9c9c9'
+    },
+    feedsText:{
+        width: '70%',
+        paddingTop: 8,
+    },
+    feedsUpdates:{
+        flexDirection: 'row',
+        // justifyContent: ,
+    },
+    feedsIcon:{
+        flexDirection: 'row',
+        width: '60%',
+        flexDirection: 'row',
+        width: '60%',
+        justifyContent: 'space-evenly',
+       paddingBottom: 5,
+    },
+    feedsImage:{
+        width: '20%',
+        marginLeft: 20,
+        paddingBottom: 2,
+        marginTop: 2,
+    },
 })

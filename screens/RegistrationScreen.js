@@ -7,7 +7,7 @@ class RegistrationScreen extends Component {
         return (
             <ScrollView >
                 <View style={styles.screen}>
-                    <Image style={styles.bgImage} source={require('../assets/download.jpg')} />
+                    <Image style={styles.bgImage} source={require('../assets/images/Wallpaper eLibrary.PNG.png')} />
 
                     <View style={styles.logoContainer}>
                         {/* image */}
@@ -74,13 +74,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         justifyContent: 'center',
-        opacity: 0.35,
       },
     logoContainer:{
         width: 120,
         marginTop: -50,
         height:'10%',
-        backgroundColor: 'grey',
+        backgroundColor: '#171b3c',
         borderRadius: 40,
     },
     logo:{
@@ -104,9 +103,10 @@ const styles = StyleSheet.create({
     labels:{
         fontWeight:'bold',
         fontSize: 18,
-        color: 'blue',
+        color: '#0430ff',
         marginTop: 40,
-        textAlign: 'left',
+        // textAlign: 'left', Doesn't work due to the alignItem style on the screen
+        position: 'relative',
     },
     inputContainer: {
         borderColor: '#cdcdcd',
@@ -115,11 +115,10 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         width:'80%',
         height:50,
-        marginBottom:45,
+        marginBottom:10,
       },
       inputs:{
         height:50,
-        // borderBottomColor: '#000',
         flex:1,
         padding: 20,
         color: '#7e7e7e',
@@ -132,6 +131,7 @@ const styles = StyleSheet.create({
       submit:{
         marginRight: '-60%',
         marginBottom: 20,
+        borderRadius: 4,
       }
 })
 

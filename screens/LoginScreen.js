@@ -9,8 +9,8 @@ import { View, Text, StyleSheet, Button, TextInput, TouchableHighlight,Image } f
 const LoginScreen = props => {
     return (
       <View style={styles.screen}>
-        <Image style={styles.bgImage} source={require('../assets/vsco_bg.jpg')} />
-        <View><Text style={styles.head}>Fupreng</Text></View>
+        <Image style={styles.bgImage} source={require('../assets/images/BACKGROUND.png')} />
+        <View><Text style={styles.head}>eHUB</Text></View>
         {/* textInput area */}
         <View style={styles.inputContainer}>
         <Image style={styles.inputIcon} source={require('../assets/user-512.png')} />
@@ -34,7 +34,7 @@ const LoginScreen = props => {
         <View style={styles.login}>
           <Button title='Log In'
               onPress={() => {
-              props.navigation.navigate('Newsfeed')} 
+              props.navigation.navigate('Elibrary')} 
             }/>
         </View>
         
@@ -49,6 +49,11 @@ const LoginScreen = props => {
               <TouchableHighlight 
                     style={styles.highlightContainer} 
                     onPress={() => props.navigation.navigate('Newsfeed')}>
+                <Text style={styles.ftext}>Newsfeed</Text>
+              </TouchableHighlight>
+              <TouchableHighlight 
+                    style={styles.highlightContainer} 
+                    onPress={() => props.navigation.navigate('Department')}>
                 <Text style={styles.ftext}>Newsfeed</Text>
               </TouchableHighlight>
             </View>

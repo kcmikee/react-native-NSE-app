@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-elements
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add formik react-native-formik
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Esenwa\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Program Files\PowerShell\7;C:\Program Files\Git\cmd;C:\Users\Esenwa\AppData\Local\Microsoft\WindowsApps;C:\Users\Esenwa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Esenwa\AppData\Local\Yarn\bin;C:\Users\Esenwa\AppData\Roaming\npm
+  C:\Program Files\PowerShell\7;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Users\Esenwa\AppData\Local\Microsoft\WindowsApps;C:\Users\Esenwa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Esenwa\AppData\Local\Yarn\bin;C:\Users\Esenwa\AppData\Roaming\npm
 
 Yarn version: 
   1.22.4
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Esenwa\Documents\rn-nse-main\node_modules\@babel\compat-data\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Esenwa\Documents\rn-nse-main\node_modules\file-uri-to-path\test'
 
 npm manifest: 
   {
@@ -27,6 +27,7 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-community/cli": "^4.7.0",
       "@react-native-community/masked-view": "0.1.6",
       "@react-navigation/native": "^5.1.5",
       "@react-navigation/stack": "^5.2.10",
