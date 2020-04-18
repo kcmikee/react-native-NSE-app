@@ -2,31 +2,33 @@ import React from 'react'
 import { Image, StyleSheet, Text, View, Platform,TouchableHighlight, ImageBackground, ScrollView } from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons";
 
-const ElibraryScreen = props => {
+const ElibraryScreen = ({navigation}) => {
     return (
-        // <ScrollView>
             <View style={styles.screen}>
+                {/* background image */}
                 <Image style={styles.bgImage} source={require('../assets/images/Wallpaper eLibrary.PNG.png')} />
+
+                {/* Top Nav */}
                 <View style={styles.topnav}>
                     <View style={styles.leftHeader}>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('Newsfeed')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-undo" : "md-undo"}
                                 color="#fff"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <Text onpress={()=> props.navigation.navigate('Newsfeed')} style={styles.logo}>eHUB</Text> 
+                        <Text onpress={()=> navigation.navigate('/')} style={styles.logo}>eHUB</Text> 
                     </View>
                     <View style={styles.rightHeader}>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-download" : "md-download"}
                                 color="#fff"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-notifications" : "md-notifications"}
                                 color="#fff"
@@ -36,8 +38,7 @@ const ElibraryScreen = props => {
                     </View>
                 </View>
 
-                {/* <View> {'\n'} </View> */}
-    
+                {/* Mid section */}   
                 <View style={styles.elib}>
                     <View style={styles.flatImg}>
                         <ImageBackground source={require('../assets/images/Profile Pic2.PNG')} style={styles.imagebg}>
@@ -54,20 +55,22 @@ const ElibraryScreen = props => {
                         </View>
                     </View>
                 </View>
+            
+            {/* The list of Items */}
             <ScrollView>
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-book" : "md-book"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Departmental Library</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Departmental Library</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -79,17 +82,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-mail" : "md-mail"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Featured</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Featured</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -101,17 +104,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-code" : "md-code"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Data Science</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Data Science</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -123,17 +126,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-hourglass" : "md-hourglass"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Math & Logic</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Math & Logic</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -145,17 +148,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-cog" : "md-cog"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Mechanics</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Mechanics</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -167,17 +170,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-flask" : "md-flask"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Chemistry</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Chemistry</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -189,17 +192,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-nuclear" : "md-nuclear"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Petroleum & Natural Gas</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Petroleum & Natural Gas</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -211,17 +214,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-construct" : "md-construct"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Electrical Machines</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Electrical Machines</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -233,17 +236,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "ios-boat" : "md-boat"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Naval Achitecture</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Naval Achitecture</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"
@@ -255,17 +258,17 @@ const ElibraryScreen = props => {
 
                 <View style={styles.list}>
                     <View style={styles.leftSide}>
-                            <TouchableHighlight style={styles.listCon} onPress={()=> props.navigation.navigate('/')}>
+                            <TouchableHighlight style={styles.listCon} onPress={()=> navigation.navigate('/')}>
                                 <Icon
                                     name={Platform.OS === "ios" ? "logo-buffer" : "logo-buffer"}
                                     color="#fff"
                                     size={25}
                                 />
                             </TouchableHighlight>
-                            <Text style={styles.listText} onPress={()=> props.navigation.navigate('/')}>Departmental Library</Text> 
+                            <Text style={styles.listText} onPress={()=> navigation.navigate('/')}>Departmental Library</Text> 
                     </View>
                     <View style={styles.rightSide}>
-                        <TouchableHighlight style={styles.rightcon} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.rightcon} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-arrow-round-forward" : "md-arrow-round-forward"}
                                 color="#fff"

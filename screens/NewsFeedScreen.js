@@ -1,31 +1,41 @@
 import React from 'react'
-import { StyleSheet, Text, View, Platform, Image,TouchableHighlight, ScrollView } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View, Platform, Image,TouchableHighlight, ScrollView } from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons";
 
-const NewsFeedScreen = props => {
+const NewsFeedScreen = ({navigation}) => {
     return (
+        <SafeAreaView>
         <View style={styles.screen}>
+            {/* Background Image */}
             <Image style={styles.bgImage} source={require('../assets/images/WALLPAPER.png')} />
+
+            {/* Header:Menu Button, Title etc */}
             <View style={styles.header}>
+
+                {/* Menu and Title */}
                 <View style={styles.left}>
-                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>
+                    <TouchableHighlight style={styles.links1} onPress={()=> navigation.openDrawer()}>
                         <Icon
                             name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
                             color="#fff"
                             size={25}
                         />
                     </TouchableHighlight>
-                    <Text onpress={()=> props.navigation.navigate('Newsfeed')} style={styles.logo}>eHUB</Text> 
+                    <TouchableHighlight  onPress={()=> navigation.navigate('Login')}>
+                        <Text onpress={()=> navigation.navigate('Login')} style={styles.logo}>eHUB</Text> 
+                    </TouchableHighlight>
                 </View>
+
+                {/* Notification and search  */}
                 <View style={styles.right}>
-                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>                           
+                    <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
                         <Icon
                             name={Platform.OS === "ios" ? "ios-notifications" : "md-notifications"}
                             color="#fff"
                             size={25}
                         />
                     </TouchableHighlight>
-                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>
+                    <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>
                         <Icon
                             name={Platform.OS === "ios" ? "ios-search" : "md-search"}
                             color="#fff"
@@ -34,20 +44,22 @@ const NewsFeedScreen = props => {
                     </TouchableHighlight>
                 </View>
             </View>
+
+            {/* Tiny NavBar */}
             <View style={styles.nav}>
-                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
                     <Text style={{fontWeight:'bold'}}> Just In </Text>
                 </TouchableHighlight> 
-                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
                     <Text> Top Stories </Text>
                 </TouchableHighlight> 
-                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
                     <Text> Department </Text>
                 </TouchableHighlight> 
-                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('/')}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
                     <Text> Programs </Text>
                 </TouchableHighlight> 
-                <TouchableHighlight style={styles.navlinks} onPress={()=> props.navigation.navigate('Community')}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('Community')}>
                     <Text> Community </Text>
                 </TouchableHighlight> 
                 <Icon
@@ -56,6 +68,8 @@ const NewsFeedScreen = props => {
                     size={25}
                 />   
             </View>
+
+            {/* Newsfeed */}
             <ScrollView>
             <View style={styles.feeds}>
                 <View style={styles.feedsText}>
@@ -69,35 +83,35 @@ const NewsFeedScreen = props => {
                         </Text>
                     </View>
                     <View style={styles.feedsIcon}>
-                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-share" : "md-share"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-time" : "md-time"}
                                 color="#000"
@@ -113,7 +127,7 @@ const NewsFeedScreen = props => {
                             color="#000"
                             size={20}
                         />
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Text> Follow </Text>
                         </TouchableHighlight>
                     </View>
@@ -137,35 +151,35 @@ const NewsFeedScreen = props => {
                         </Text>
                     </View>
                     <View style={styles.feedsIcon}>
-                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-share" : "md-share"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-time" : "md-time"}
                                 color="#000"
@@ -181,7 +195,7 @@ const NewsFeedScreen = props => {
                             color="#000"
                             size={20}
                         />
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Text> Follow </Text>
                         </TouchableHighlight>
                     </View>
@@ -205,35 +219,35 @@ const NewsFeedScreen = props => {
                         </Text>
                     </View>
                     <View style={styles.feedsIcon}>
-                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-share" : "md-share"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-time" : "md-time"}
                                 color="#000"
@@ -249,7 +263,7 @@ const NewsFeedScreen = props => {
                             color="#000"
                             size={20}
                         />
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Text> Follow </Text>
                         </TouchableHighlight>
                     </View>
@@ -273,35 +287,35 @@ const NewsFeedScreen = props => {
                         </Text>
                     </View>
                     <View style={styles.feedsIcon}>
-                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-share" : "md-share"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-time" : "md-time"}
                                 color="#000"
@@ -317,7 +331,7 @@ const NewsFeedScreen = props => {
                             color="#000"
                             size={20}
                         />
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Text> Follow </Text>
                         </TouchableHighlight>
                     </View>
@@ -341,35 +355,35 @@ const NewsFeedScreen = props => {
                         </Text>
                     </View>
                     <View style={styles.feedsIcon}>
-                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-share" : "md-share"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-time" : "md-time"}
                                 color="#000"
@@ -385,7 +399,7 @@ const NewsFeedScreen = props => {
                             color="#000"
                             size={20}
                         />
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Text> Follow </Text>
                         </TouchableHighlight>
                     </View>
@@ -409,35 +423,35 @@ const NewsFeedScreen = props => {
                         </Text>
                     </View>
                     <View style={styles.feedsIcon}>
-                         <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-globe" : "md-globe"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-share" : "md-share"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-up" : "md-thumbs-up"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight>
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-thumbs-down" : "md-thumbs-down"}
                                 color="#000"
                                 size={25}
                             />
                         </TouchableHighlight> 
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Icon
                                 name={Platform.OS === "ios" ? "ios-time" : "md-time"}
                                 color="#000"
@@ -453,7 +467,7 @@ const NewsFeedScreen = props => {
                             color="#000"
                             size={20}
                         />
-                        <TouchableHighlight style={styles.links} onPress={()=> props.navigation.navigate('/')}>
+                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
                             <Text> Follow </Text>
                         </TouchableHighlight>
                     </View>
@@ -469,6 +483,7 @@ const NewsFeedScreen = props => {
             </ScrollView>
 
         </View>
+        </SafeAreaView>
     )
 }
 
@@ -537,7 +552,6 @@ const styles = StyleSheet.create({
     },
     feedsUpdates:{
         flexDirection: 'row',
-        // justifyContent: ,
     },
     feedsIcon:{
         flexDirection: 'row',

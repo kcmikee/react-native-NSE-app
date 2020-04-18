@@ -1,18 +1,29 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button, Image,TextInput } from 'react-native'
+import { Formik } from 'formik'
 
 const ForgotPassword = () => {
     return (
         <View style={styles.screen}>
-        <Image style={styles.bgImage} source={require('../assets/pencil.jpg')} />
-
-            <Text style={styles.label}>Enter Email</Text>
-            <View style={styles.inputContainer}>
-                <TextInput style={styles.inputs} keyboardType="email-address" />
-            </View>
+            <Image style={styles.bgImage} source={require('../assets/pencil.jpg')} />
+          <Formik 
+            initialValues={{ email: '' }}
+            onSubmit={values => console.log(values)}
+          >
+            {({ handleChange, handleBlur, handleSubmit, values }) => (
             <View>
-                <Button title='submit' />
+                <Text style={styles.label}>Enter Email</Text>
+                <View style={styles.inputContainer}>
+                    <TextInput style={styles.inputs} keyboardType="email-address" onChangeText={handleChange('email')}
+                        onBlur={handleBlur('email')}
+                        value={values.email}/>
+                </View>
+                <View>
+                    <Button title='submit' onPress={handleSubmit} />
+                </View>
             </View>
+            )}
+          </Formik>
         </View>
     )
 }

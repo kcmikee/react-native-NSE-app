@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View,Image, ScrollView, TouchableHighlight, Platform } from 'react-native'
+import {SafeAreaView, StyleSheet, Text, View,Image, ScrollView, TouchableHighlight, Platform } from 'react-native'
  
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -7,13 +7,15 @@ import Icon from "react-native-vector-icons/Ionicons";
 const DepartmentalLibraryScreen = props => {
     return (
         <View style={styles.screen}>
+            {/* Background Image */}
             <Image style={styles.bgImage} source={require('../assets/images/Departmental Library.PNG.png')} />
             
+            {/* Back Button, Title and Notification icon */}
             <View style={styles.header}>
                 <View style={styles.left}>
-                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>
+                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('Newsfeed')}>
                         <Icon
-                            name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
+                            name={Platform.OS === "ios" ? "ios-undo" : "md-undo"}
                             color="#fff"
                             size={25}
                         />
@@ -30,6 +32,8 @@ const DepartmentalLibraryScreen = props => {
                     </TouchableHighlight>
                 </View>
             </View>
+
+            {/* Those 3circular images  */}
             <View style={styles.trio}>
                 <View style={styles.one}>
                     <View style={styles.oneImgC}>
@@ -69,6 +73,8 @@ const DepartmentalLibraryScreen = props => {
                     </View>
                 </View>
             </View>
+
+            {/* Scroll view for the item. N/B:The scrolling is sideways */}
             <ScrollView horizontal={true}>
             <View style={styles.imgList}>
                 <View style={styles.imgcontainer}>

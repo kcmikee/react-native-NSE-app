@@ -1,91 +1,109 @@
 import React, { Component } from 'react'
 import { Text, View, Button,StyleSheet, ScrollView,Image, TextInput } from 'react-native'
-import Input from '../components/input'
-
+import {Formik} from 'formik'
 class RegistrationScreen extends Component {
     render() {
         return (
             <ScrollView >
                 <View style={styles.screen}>
+                    {/* background image */}
                     <Image style={styles.bgImage} source={require('../assets/images/Wallpaper eLibrary.PNG.png')} />
 
+                    {/* top logo */}
                     <View style={styles.logoContainer}>
-                        {/* image */}
                         <Image style={styles.logo} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTqncJNEyYmdQIq8Ola1D3Ev_mhy1O2M0ZDQWdbhnSK1tWgnX4I&usqp=CAU'}} />                    
                         <View>
                             <Text style={styles.logoText}>SIGN UP</Text>
                         </View>
                     </View>
-                        <Text style={styles.labels}> 
-                            Full Name
-                        </Text>
-                        <View style={styles.inputContainer}>
-                            <Input />
-                        </View>
-                        <Text style={styles.labels}>
-                            Email
-                        </Text>
-                        <View style={styles.inputContainer}>
-                        <TextInput style={styles.inputs} keyboardType="email-address" />
 
-                        </View>
-                        <Text style={styles.labels}>
-                            Password
-                        </Text>
-                        <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} secureTextEntry={true} />
-                        </View>
-                        <Text style={styles.labels}>
-                            Department
-                        </Text>
-                        <View style={styles.inputContainer}>
-                            <Input />
-                        </View>
-                        <Text style={styles.labels}>
-                            Matriculation Number
-                        </Text>
-                        <View style={styles.inputContainer}>
-                            <Input />
-                        </View>
-                        <Text style={styles.labels}>
-                            NSE Registration Code (Optional)
-                        </Text>
-                        <View style={styles.inputContainer}>
-                            <Input />
-                        </View>
-                    <View style={styles.submit}>
-                        <Button title='Submit'
-                                onPress={() => {
-                                this.props.navigation.navigate('Newsfeed')} }/>
-                    </View>
+                    {/* Form starts here */}
+                    <Formik
+                        initialValues={{ name:'',email:'', password:'', department:'',matnumber:'',nsecode:'' }}
+                        onSubmit={values => console.log(values)
+                        }>
+                            {({handleChange,handleSubmit, values}) =>(
+                                <View style={styles.align}>
+                                      <Text style={styles.labels}> 
+                                        Full Name
+                                    </Text>
+                                    <View style={styles.inputContainer}>
+                                        <TextInput style={styles.inputs} onChangeText={handleChange('name')} value={values.name}/>
+                                    </View>
+                                
+                                    <Text style={styles.labels}>
+                                        Email
+                                    </Text>
+                                    <View style={styles.inputContainer}>
+                                        <TextInput style={styles.inputs} keyboardType="email-address" onChangeText={handleChange('email')} value={values.email}/>
+                                    </View>
+        
+                                    <Text style={styles.labels}>
+                                        Password
+                                    </Text>
+                                    <View style={styles.inputContainer}>
+                                        <TextInput style={styles.inputs} secureTextEntry={true} onChangeText={handleChange('password')} value={values.password}/>
+                                    </View>
+        
+                                    <Text style={styles.labels}>
+                                        Department
+                                    </Text>
+                                    <View style={styles.inputContainer}>
+                                        <TextInput style={styles.inputs} onChangeText={handleChange('department')} value={values.department}/>  
+                                    </View>
+        
+                                    <Text style={styles.labels}>
+                                        Matriculation Number
+                                    </Text>
+                                    <View style={styles.inputContainer}>
+                                        <TextInput style={styles.inputs} onChangeText={handleChange('matnumber')} value={values.matnumber}/>
+                                    </View>
+        
+                                    <Text style={styles.labels}>
+                                        NSE Registration Code (Optional)
+                                    </Text>
+                                    <View style={styles.inputContainer}>
+                                        <TextInput style={styles.inputs} onChangeText={handleChange('nsecode')} value={values.nsecode}/>
+                                    </View>
+                                    <View style={styles.submit}>
+                                        <Button title='Submit'
+                                            onPress={handleSubmit}
+                                        />
+                                    </View>
+                                </View>
+                            
+                            )}
+                    
+                    </Formik>
                 </View>
             </ScrollView>
         )
     }
 }
 const styles = StyleSheet.create({
-    screen:{ 
-      alignItems: 'center', 
-      justifyContent: 'center' 
+    screen:{
+        flex: 1,
+        justifyContent:'center'
     },
     bgImage:{
         flex: 1,
         position: 'absolute',
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
+        // justifyContent: 'center',
       },
     logoContainer:{
         width: 120,
-        marginTop: -50,
-        height:'10%',
+        marginTop: -60,
+        height:'22%',
         backgroundColor: '#171b3c',
         borderRadius: 40,
+        alignSelf: 'center'
     },
     logo:{
         width:100,
         height:100,
-        marginTop: 68,
+        marginTop: 40,
         marginLeft: 10,
         borderRadius: 20,
     },
@@ -104,34 +122,37 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize: 18,
         color: '#0430ff',
-        marginTop: 40,
-        // textAlign: 'left', Doesn't work due to the alignItem style on the screen
-        position: 'relative',
+        flex: 1,
+    },
+    align:{
+        alignSelf:'center',
+        width:'80%',
     },
     inputContainer: {
         borderColor: '#cdcdcd',
-        backgroundColor: '#fff',
+        backgroundColor: '#cdcd',
         borderRadius:10,
         borderWidth: 2,
-        width:'80%',
-        height:50,
+        width:'100%',
+        height:80,
+        flex: 1,
         marginBottom:10,
       },
       inputs:{
-        height:50,
-        flex:1,
+        height:40,
         padding: 20,
         color: '#7e7e7e',
         fontSize: 25,
         fontWeight: 'bold',
         fontFamily: 'verdana',
         textAlign: 'center',
-        justifyContent: 'center',
+        flex: 1,
       },
       submit:{
-        marginRight: '-60%',
+        width: 250,
+        alignSelf: 'flex-end',
         marginBottom: 20,
-        borderRadius: 4,
+        padding: 35,
       }
 })
 
