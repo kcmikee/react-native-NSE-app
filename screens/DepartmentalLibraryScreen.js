@@ -8,7 +8,7 @@ const DepartmentalLibraryScreen = props => {
     return (
         <View style={styles.screen}>
             {/* Background Image */}
-            <Image style={styles.bgImage} source={require('../assets/images/Departmental Library.PNG.png')} />
+            <Image style={styles.bgImage} source={require('../assets/images/DepartmentalLibrary.PNG.png')} />
             
             {/* Back Button, Title and Notification icon */}
             <View style={styles.header}>
@@ -37,7 +37,7 @@ const DepartmentalLibraryScreen = props => {
             <View style={styles.trio}>
                 <View style={styles.one}>
                     <View style={styles.oneImgC}>
-                        <Image style={styles.oneImg} source={require('../assets/images/Profile Pic2.PNG')} />
+                        <Image style={styles.oneImg} source={require('../assets/images/ProfilePic2.PNG')} />
                     </View>
                     <View style={styles.oneText}>
                         <Text style={{color:'#fff',fontSize: 18,}}>@ lady J</Text>
@@ -79,88 +79,88 @@ const DepartmentalLibraryScreen = props => {
             <View style={styles.imgList}>
                 <View style={styles.imgcontainer}>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (1).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(1).jpg')} />
                     </TouchableHighlight >
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (2).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(2).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (4).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(4).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (5).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(5).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (6).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(6).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (7).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(7).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (8).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(8).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (9).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(9).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
                         <Image style={styles.Imagescroll} source={require('../assets/department/sexy.jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1 (3).jpg')} />
+                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
                     </TouchableHighlight>
                     
                 </View>

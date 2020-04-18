@@ -6,7 +6,7 @@ const ElibraryScreen = ({navigation}) => {
     return (
             <View style={styles.screen}>
                 {/* background image */}
-                <Image style={styles.bgImage} source={require('../assets/images/Wallpaper eLibrary.PNG.png')} />
+                <Image style={styles.bgImage} source={require('../assets/images/WallpapereLibrary.PNG.png')} />
 
                 {/* Top Nav */}
                 <View style={styles.topnav}>
@@ -41,7 +41,7 @@ const ElibraryScreen = ({navigation}) => {
                 {/* Mid section */}   
                 <View style={styles.elib}>
                     <View style={styles.flatImg}>
-                        <ImageBackground source={require('../assets/images/Profile Pic2.PNG')} style={styles.imagebg}>
+                        <ImageBackground source={require('../assets/images/ProfilePic2.PNG')} style={styles.imagebg}>
                             <Text style={styles.libs}>E-LIBRARY</Text>
                         </ImageBackground>
                     </View>

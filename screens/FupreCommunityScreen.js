@@ -7,7 +7,7 @@ const FupreCommunityScreen = ({navigation}) => {
     return (
         <View style={styles.screen}>
             {/* Background Image */}
-            <Image style={styles.bgImage} source={require('../assets/images/Mask Group 8.png')} />
+            <Image style={styles.bgImage} source={require('../assets/images/MaskGroup8.png')} />
             
             {/* Header:Back button, Title and the rest */}
             <View style={styles.header}>

@@ -7,7 +7,7 @@ class RegistrationScreen extends Component {
             <ScrollView >
                 <View style={styles.screen}>
                     {/* background image */}
-                    <Image style={styles.bgImage} source={require('../assets/images/Wallpaper eLibrary.PNG.png')} />
+                    <Image style={styles.bgImage} source={require('../assets/images/WallpapereLibrary.PNG.png')} />
 
                     {/* top logo */}
                     <View style={styles.logoContainer}>

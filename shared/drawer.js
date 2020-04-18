@@ -8,7 +8,7 @@ import { Drawer, Caption, Title, Paragraph, Text, TouchableRipple, Switch} from 
 export function DrawerContent(props){
     return(
         <View style={styles.screen}>
-            <ImageBackground style={styles.background} source={require('../assets/images/Menu eHUB.PNG.png')}>
+            <ImageBackground style={styles.background} source={require('../assets/images/MenueHUB.PNG.png')}>
                 <DrawerContentScrollView>
                     {/* Contains the ehub and notification bell */}
                     <View style={styles.header}>
@@ -27,7 +27,7 @@ export function DrawerContent(props){
                     </View>
                     {/* Contains the Profile section */}
                     <View style={styles.mid}>
-                        <Image style={styles.midImage} source={require('../assets/images/Profile Pic2.PNG')} />
+                        <Image style={styles.midImage} source={require('../assets/images/ProfilePic2.PNG')} />
                         <View style={styles.nse}>
                             <Image style={styles.nseImg} source={require('../assets/download.jpg')} />
                         </View>

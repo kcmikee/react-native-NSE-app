@@ -136,7 +136,7 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight>
                     </View>
                     <View >
-                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/ProfilePic.PNG.png')} />
                     </View>
                 </View>
             </View>
@@ -204,7 +204,7 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight>
                     </View>
                     <View >
-                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/ProfilePic.PNG.png')} />
                     </View>
                 </View>
             </View>
@@ -272,7 +272,7 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight>
                     </View>
                     <View >
-                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/ProfilePic.PNG.png')} />
                     </View>
                 </View>
             </View>
@@ -340,7 +340,7 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight>
                     </View>
                     <View >
-                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/ProfilePic.PNG.png')} />
                     </View>
                 </View>
             </View>
@@ -408,7 +408,7 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight>
                     </View>
                     <View >
-                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/ProfilePic.PNG.png')} />
                     </View>
                 </View>
             </View>
@@ -476,7 +476,7 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight>
                     </View>
                     <View >
-                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/Profile Pic.PNG.png')} />
+                        <Image style={{borderRadius: 15, width: 65, height: 95}} source={require('../assets/images/ProfilePic.PNG.png')} />
                     </View>
                 </View>
             </View>
