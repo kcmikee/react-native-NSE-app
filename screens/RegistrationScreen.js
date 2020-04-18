@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
       },
     logoContainer:{
         width: 120,
-        marginTop: -60,
+        marginTop: -80,
         height:'22%',
         backgroundColor: '#171b3c',
         borderRadius: 40,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     logo:{
         width:100,
         height:100,
-        marginTop: 40,
+        marginTop: 70,
         marginLeft: 10,
         borderRadius: 20,
     },
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         width: 250,
         alignSelf: 'flex-end',
         marginBottom: 20,
-        padding: 35,
+        padding: 25,
       }
 })
 

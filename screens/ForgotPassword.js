@@ -12,15 +12,13 @@ const ForgotPassword = () => {
           >
             {({ handleChange, handleBlur, handleSubmit, values }) => (
             <View>
-                <Text style={styles.label}>Enter Email</Text>
-                <View style={styles.inputContainer}>
-                    <TextInput style={styles.inputs} keyboardType="email-address" onChangeText={handleChange('email')}
-                        onBlur={handleBlur('email')}
-                        value={values.email}/>
-                </View>
-                <View>
-                    <Button title='submit' onPress={handleSubmit} />
-                </View>
+            <Text style={styles.label}>Enter Email</Text>
+            <View style={styles.inputContainer}>
+                <TextInput style={styles.inputs} keyboardType="email-address" />
+            </View>
+            <View style={{width:'20%', alignSelf: 'center',}}>
+                <Button title='submit' onPress={handleSubmit} />
+            </View>
             </View>
             )}
           </Formik>
@@ -49,7 +47,8 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontFamily: 'segoe print',
         color: '#fff',
-        position: 'relative'
+        position: 'relative',
+        alignSelf: 'center',
     },
     inputContainer: {
         borderColor: '#cdcdcd',
@@ -59,6 +58,7 @@ const styles = StyleSheet.create({
         width:'82%',
         height:55,
         marginBottom:45,
+        alignSelf: 'center',
       },
     inputs:{
         height:50,

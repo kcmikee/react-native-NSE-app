@@ -72,6 +72,8 @@ const NewsFeedScreen = ({navigation}) => {
             {/* Newsfeed */}
             <ScrollView>
             <View style={styles.feeds}>
+
+                {/* Contains text on the left */}
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
                             <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
@@ -120,6 +122,8 @@ const NewsFeedScreen = ({navigation}) => {
                         </TouchableHighlight> 
                     </View>
                 </View>
+                
+                {/* Contains the image on the right */}
                 <View style={styles.feedsImage}>
                     <View style={{flexDirection: 'row'}}>
                         <Icon
