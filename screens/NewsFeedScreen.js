@@ -53,7 +53,7 @@ const NewsFeedScreen = ({navigation}) => {
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
                     <Text> Top Stories </Text>
                 </TouchableHighlight> 
-                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
+                <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('Department')}>
                     <Text> Department </Text>
                 </TouchableHighlight> 
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
@@ -515,12 +515,12 @@ const styles = StyleSheet.create({
     left:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 20,
+        padding: 10,
     },
     right:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 25,
+        padding: 15,
     },
     links1:{
         padding:14
