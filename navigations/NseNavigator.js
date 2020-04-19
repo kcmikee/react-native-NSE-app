@@ -33,7 +33,8 @@ const HomeStackScreen = ({navigation}) =>(
                 <Stack.Screen 
                         name="Register" 
                         component={RegistrationScreen}
-                    />   
+                        options={{headerShown: false}}
+                        />   
         </Stack.Navigator>
 );
 const NewsfeedStackScreen =({navigation}) => (

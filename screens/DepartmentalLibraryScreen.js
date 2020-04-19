@@ -1,6 +1,6 @@
 import React from 'react'
 import {SafeAreaView, StyleSheet, Text, View,Image, ScrollView, TouchableHighlight, Platform } from 'react-native'
- 
+ import DeptHeader from '../components/headers/DeptHeader'
 import Icon from "react-native-vector-icons/Ionicons";
 
 
@@ -11,11 +11,13 @@ const DepartmentalLibraryScreen = props => {
             <Image style={styles.bgImage} source={require('../assets/images/DepartmentalLibrary.PNG.png')} />
             
             {/* Back Button, Title and Notification icon */}
-            <View style={styles.header}>
+
+            <DeptHeader />
+            {/* <View style={styles.header}>
                 <View style={styles.left}>
                     <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('Newsfeed')}>
                         <Icon
-                            name={Platform.OS === "ios" ? "ios-undo" : "md-undo"}
+                            name={Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"}
                             color="#fff"
                             size={25}
                         />
@@ -31,7 +33,7 @@ const DepartmentalLibraryScreen = props => {
                         />
                     </TouchableHighlight>
                 </View>
-            </View>
+            </View> */}
 
             {/* Those 3circular images  */}
             <View style={styles.trio}>
@@ -74,8 +76,8 @@ const DepartmentalLibraryScreen = props => {
                 </View>
             </View>
 
-            {/* Scroll view for the item. N/B:The scrolling is sideways */}
-            <ScrollView horizontal={true}>
+            {/* Scroll view for the item.  */}
+            <ScrollView>
             <View style={styles.imgList}>
                 <View style={styles.imgcontainer}>
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
@@ -183,30 +185,30 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
       },
-      header:{
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        backgroundColor: 'transparent',
-        paddingTop: 10,
-    },
-    logo:{
-        fontWeight: 'bold',
-        fontSize: 20,
-        fontFamily: 'segoe script',
-        marginTop:13,
-        color: '#fff'
-    },
-    left:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingTop: 10,
-    },
-    right:{
-        paddingTop: 10,
-    },
-    links1:{
-        padding:14
-    },
+    //   header:{
+    //     flexDirection: 'row',
+    //     justifyContent:'space-between',
+    //     backgroundColor: 'transparent',
+    //     paddingTop: 10,
+    // },
+    // logo:{
+    //     fontWeight: 'bold',
+    //     fontSize: 20,
+    //     fontFamily: 'segoe script',
+    //     marginTop:13,
+    //     color: '#fff'
+    // },
+    // left:{
+    //     flexDirection: 'row',
+    //     justifyContent: 'space-between',
+    //     paddingTop: 10,
+    // },
+    // right:{
+    //     paddingTop: 10,
+    // },
+    // links1:{
+    //     padding:14
+    // },
     trio:{
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -270,8 +272,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     imgList:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         paddingTop: 15,
         height:'100%',
         width: '100%',
@@ -279,19 +279,18 @@ const styles = StyleSheet.create({
 
     },
     imgcontainer:{
-        flexDirection: 'column',
+        flexDirection: 'row',
         height:'100%',
         width:100,
-        flexWrap: 'wrap',
-        paddingBottom: 6,
+        padding: 6,
     }, 
-    Imagescroll:{
-        height:120,
-        width:100,
-        borderRadius: 10,
-    },
     scroll:{
         paddingTop: 10,
         paddingLeft:10
-    }
+    },
+    Imagescroll:{
+        height:200,
+        width:180,
+        borderRadius: 10,
+    },
 })

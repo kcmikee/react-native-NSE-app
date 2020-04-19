@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, Button,StyleSheet, ScrollView,Image, TextInput } from 'react-native'
-import {Formik} from 'formik'
+import { Text, View,StyleSheet, ScrollView,Image,TouchableHighlight, Platform } from 'react-native'
+import Icon from "react-native-vector-icons/Ionicons"
+import RegForm from '../components/forms/RegForm'
 class RegistrationScreen extends Component {
     render() {
         return (
@@ -8,7 +9,13 @@ class RegistrationScreen extends Component {
                 <View style={styles.screen}>
                     {/* background image */}
                     <Image style={styles.bgImage} source={require('../assets/images/WallpapereLibrary.PNG.png')} />
-
+                    <TouchableHighlight style={{justifyContent: 'flex-start',marginTop: 18,marginLeft: 18,}} onPress={()=> this.props.navigation.navigate('Login')}>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"}
+                                color="#fff"
+                                size={30}
+                            />
+                        </TouchableHighlight>
                     {/* top logo */}
                     <View style={styles.logoContainer}>
                         <Image style={styles.logo} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTqncJNEyYmdQIq8Ola1D3Ev_mhy1O2M0ZDQWdbhnSK1tWgnX4I&usqp=CAU'}} />                    
@@ -17,64 +24,8 @@ class RegistrationScreen extends Component {
                         </View>
                     </View>
 
-                    {/* Form starts here */}
-                    <Formik
-                        initialValues={{ name:'',email:'', password:'', department:'',matnumber:'',nsecode:'' }}
-                        onSubmit={values => console.log(values)
-                        }>
-                            {({handleChange,handleSubmit, values}) =>(
-                                <View style={styles.align}>
-                                      <Text style={styles.labels}> 
-                                        Full Name
-                                    </Text>
-                                    <View style={styles.inputContainer}>
-                                        <TextInput style={styles.inputs} onChangeText={handleChange('name')} value={values.name}/>
-                                    </View>
-                                
-                                    <Text style={styles.labels}>
-                                        Email
-                                    </Text>
-                                    <View style={styles.inputContainer}>
-                                        <TextInput style={styles.inputs} keyboardType="email-address" onChangeText={handleChange('email')} value={values.email}/>
-                                    </View>
-        
-                                    <Text style={styles.labels}>
-                                        Password
-                                    </Text>
-                                    <View style={styles.inputContainer}>
-                                        <TextInput style={styles.inputs} secureTextEntry={true} onChangeText={handleChange('password')} value={values.password}/>
-                                    </View>
-        
-                                    <Text style={styles.labels}>
-                                        Department
-                                    </Text>
-                                    <View style={styles.inputContainer}>
-                                        <TextInput style={styles.inputs} onChangeText={handleChange('department')} value={values.department}/>  
-                                    </View>
-        
-                                    <Text style={styles.labels}>
-                                        Matriculation Number
-                                    </Text>
-                                    <View style={styles.inputContainer}>
-                                        <TextInput style={styles.inputs} onChangeText={handleChange('matnumber')} value={values.matnumber}/>
-                                    </View>
-        
-                                    <Text style={styles.labels}>
-                                        NSE Registration Code (Optional)
-                                    </Text>
-                                    <View style={styles.inputContainer}>
-                                        <TextInput style={styles.inputs} onChangeText={handleChange('nsecode')} value={values.nsecode}/>
-                                    </View>
-                                    <View style={styles.submit}>
-                                        <Button title='Submit'
-                                            onPress={handleSubmit}
-                                        />
-                                    </View>
-                                </View>
-                            
-                            )}
-                    
-                    </Formik>
+                    {/* Form starts here */}    
+                    <RegForm />
                 </View>
             </ScrollView>
         )
@@ -94,28 +45,23 @@ const styles = StyleSheet.create({
       },
     logoContainer:{
         width: 120,
-        marginTop: -80,
-        height:'22%',
+        height:150,
         backgroundColor: '#171b3c',
         borderRadius: 40,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     logo:{
         width:100,
         height:100,
-        marginTop: 70,
-        marginLeft: 10,
         borderRadius: 20,
+        alignSelf: 'center',
     },
     logoText:{
-        justifyContent:'center',
         fontWeight: 'bold',
         fontSize: 20,
-        marginBottom: 40,
         color: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: 18,
         letterSpacing: 1,
     },
     labels:{

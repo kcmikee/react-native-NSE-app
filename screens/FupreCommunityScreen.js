@@ -14,7 +14,7 @@ const FupreCommunityScreen = ({navigation}) => {
                 <View style={styles.left}>
                     <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('Newsfeed')}>
                         <Icon
-                            name={Platform.OS === "ios" ? "ios-undo" : "md-undo"}
+                            name={Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"}
                             color="#fff"
                             size={25}
                         />
@@ -22,7 +22,7 @@ const FupreCommunityScreen = ({navigation}) => {
                     <Text onpress={()=> navigation.navigate('/')} style={styles.logo}>eHUB Community</Text> 
                 </View>
                 <View style={styles.right}>
-                    <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
+                    {/* <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
                         <Icon
                             name={Platform.OS === "ios" ? "ios-folder" : "md-folder"}
                             color="#fff"
@@ -35,7 +35,7 @@ const FupreCommunityScreen = ({navigation}) => {
                             color="#fff"
                             size={25}
                         />
-                    </TouchableHighlight>
+                    </TouchableHighlight> */}
                     <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
                         <Icon
                             name={Platform.OS === "ios" ? "ios-notifications" : "md-notifications"}
