@@ -33,7 +33,11 @@ const LoginScreen = ({navigation}) => {
                 <Image style={styles.inputIcon} source={require('../assets/download.png')} />
                 <TextInput style={styles.inputs} placeholder='Password' onChangeText={handleChange('password')} value={values.password} secureTextEntry={true}/>
               </View>
-            
+
+              <View style={styles.login}>
+                <Button title='Log In' style={styles.btn}
+                    onPress={handleSubmit}/>
+              </View>
               <View style={styles.forgotContainer}>
                 <Text style={styles.tf}>Forgot Password?</Text>
                 <TouchableHighlight 
@@ -41,11 +45,6 @@ const LoginScreen = ({navigation}) => {
                       onPress={() => navigation.navigate('ForgotPassword')}>
                   <Text style={styles.ftext}>Get help Signing In</Text>
                 </TouchableHighlight>
-              </View>
-
-              <View style={styles.login}>
-                <Button title='Log In' style={styles.btn}
-                    onPress={handleSubmit}/>
               </View>
             </View>
           )}
@@ -79,13 +78,13 @@ const LoginScreen = ({navigation}) => {
       height:60,
       width:60,
       borderRadius:30,
-      margin:15
+      margin:25
     },
     head:{
       marginBottom: 20,
       fontSize: 50,
-      fontFamily: 'segoe print',
-      color: '#1b1b1b',
+      fontFamily: 'segoePrint',
+      color: '#fff',
       textAlign: 'center'
     },
     inputContainer: {
@@ -100,7 +99,7 @@ const LoginScreen = ({navigation}) => {
       alignSelf:'center'
     },
     inputs:{
-      // height:45,
+      height:45,
       // borderBottomColor: '#000',
       flex:1,
       width: '80%',
@@ -138,7 +137,7 @@ const LoginScreen = ({navigation}) => {
       padding:10,
     },
     login:{
-      padding:25,
+      padding:5,
       width:'40%',
       alignSelf: 'center',
     },

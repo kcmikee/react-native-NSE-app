@@ -4,7 +4,6 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 const NewsFeedScreen = ({navigation}) => {
     return (
-        <SafeAreaView>
         <View style={styles.screen}>
             {/* Background Image */}
             <Image style={styles.bgImage} source={require('../assets/images/WALLPAPER.png')} />
@@ -76,8 +75,8 @@ const NewsFeedScreen = ({navigation}) => {
                 {/* Contains text on the left */}
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
-                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
-                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                            <Text style={{fontWeight: 'bold', fontFamily: 'minion',}}> New Update!!! </Text>
+                            <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
                         <Text style={{textAlign: 'justify',}}> 
@@ -146,8 +145,8 @@ const NewsFeedScreen = ({navigation}) => {
             <View style={styles.feeds}>
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
-                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
-                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                        <Text style={{fontWeight: 'bold', fontFamily: 'minion',}}> New Update!!! </Text>
+                        <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
                         <Text style={{textAlign: 'justify',}}> 
@@ -214,8 +213,8 @@ const NewsFeedScreen = ({navigation}) => {
             <View style={styles.feeds}>
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
-                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
-                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                        <Text style={{fontWeight: 'bold', fontFamily: 'minion',}}> New Update!!! </Text>
+                        <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
                         <Text style={{textAlign: 'justify',}}> 
@@ -282,8 +281,8 @@ const NewsFeedScreen = ({navigation}) => {
             <View style={styles.feeds}>
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
-                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
-                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                        <Text style={{fontWeight: 'bold', fontFamily: 'minion',}}> New Update!!! </Text>
+                        <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
                         <Text style={{textAlign: 'justify',}}> 
@@ -350,8 +349,8 @@ const NewsFeedScreen = ({navigation}) => {
             <View style={styles.feeds}>
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
-                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
-                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                        <Text style={{fontWeight: 'bold', fontFamily: 'minion',}}> New Update!!! </Text>
+                        <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
                         <Text style={{textAlign: 'justify',}}> 
@@ -418,8 +417,8 @@ const NewsFeedScreen = ({navigation}) => {
             <View style={styles.feeds}>
                 <View style={styles.feedsText}>
                     <View style={styles.feedsUpdates}>
-                            <Text style={{fontWeight: 'bold', fontFamily: 'times new roman',}}> New Update!!!</Text>
-                            <Text style={{fontWeight: 'normal', fontFamily: 'segoe script',}}>The Engineering Body</Text>
+                        <Text style={{fontWeight: 'bold', fontFamily: 'minion',}}> New Update!!!  </Text>
+                        <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
                         <Text style={{textAlign: 'justify',}}> 
@@ -487,7 +486,6 @@ const NewsFeedScreen = ({navigation}) => {
             </ScrollView>
 
         </View>
-        </SafeAreaView>
     )
 }
 
@@ -512,7 +510,7 @@ const styles = StyleSheet.create({
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
-        fontFamily: 'segoe script',
+        fontFamily: 'segoeScript',
         marginTop:13,
         color: '#fff'
     },

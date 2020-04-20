@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image, StyleSheet,Platform, View,ImageBackground,TouchableHighlight, } from 'react-native'
+import {Image, StyleSheet,Platform, View,ImageBackground,TouchableHighlight,SafeAreaView } from 'react-native'
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
 import Icon from "react-native-vector-icons/Ionicons";
 import { Drawer, Caption, Title, Paragraph, Text, TouchableRipple, Switch} from 'react-native-paper'
@@ -27,7 +27,7 @@ export function DrawerContent(props){
                     </View>
                     {/* Contains the Profile section */}
                     <View style={styles.mid}>
-                        <Image style={styles.midImage} source={require('../assets/images/ProfilePic2.PNG')} />
+                        <Image style={styles.midImage} source={require('../assets/images/ProfilePic2.png')} />
                         <View style={styles.nse}>
                             <Image style={styles.nseImg} source={require('../assets/download.jpg')} />
                         </View>
@@ -196,13 +196,13 @@ const styles =StyleSheet.create({
     header:{
         flexDirection: 'row',
         justifyContent:'space-between',
-        paddingTop:10,
+        paddingTop:15,
         marginBottom: 10,
     },
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
-        fontFamily: 'segoe script',
+        fontFamily: 'segoeScript',
         color: '#fff',
     },
     left:{

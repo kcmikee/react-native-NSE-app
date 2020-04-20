@@ -41,7 +41,7 @@ const ElibraryScreen = ({navigation}) => {
                 {/* Mid section */}   
                 <View style={styles.elib}>
                     <View style={styles.flatImg}>
-                        <ImageBackground source={require('../assets/images/ProfilePic2.PNG')} style={styles.imagebg}>
+                        <ImageBackground source={require('../assets/images/ProfilePic2.png')} style={styles.imagebg}>
                             <Text style={styles.libs}>E-LIBRARY</Text>
                         </ImageBackground>
                     </View>
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
-        fontFamily: 'segoe script',
+        fontFamily: 'segoeScript',
         marginTop:15,
         color: '#fff'
     },
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
     elib:{
         flexDirection: 'row',
         borderRadius:15,
-        borderColor:'#sffffff',
+        borderColor:'#fff',
         borderWidth: 1,
     },
     flatImg:{

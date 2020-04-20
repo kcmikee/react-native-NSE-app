@@ -1,7 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableHighlight, Platform  } from 'react-native'
+import Icon from "react-native-vector-icons/Ionicons";
 
-const RegHeader = () => {
+
+const RegHeader = (props) => {
     return (
         <View style={styles.header}>
                 <View style={styles.left}>
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
-        fontFamily: 'segoe script',
+        fontFamily: 'segoeScript',
         marginTop:13,
         color: '#fff'
     },

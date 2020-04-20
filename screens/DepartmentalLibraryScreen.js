@@ -1,19 +1,17 @@
 import React from 'react'
 import {SafeAreaView, StyleSheet, Text, View,Image, ScrollView, TouchableHighlight, Platform } from 'react-native'
- import DeptHeader from '../components/headers/DeptHeader'
 import Icon from "react-native-vector-icons/Ionicons";
 
 
 const DepartmentalLibraryScreen = props => {
     return (
+        
         <View style={styles.screen}>
             {/* Background Image */}
             <Image style={styles.bgImage} source={require('../assets/images/DepartmentalLibrary.PNG.png')} />
             
             {/* Back Button, Title and Notification icon */}
-
-            <DeptHeader />
-            {/* <View style={styles.header}>
+            <View style={styles.header}>
                 <View style={styles.left}>
                     <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('Newsfeed')}>
                         <Icon
@@ -33,17 +31,17 @@ const DepartmentalLibraryScreen = props => {
                         />
                     </TouchableHighlight>
                 </View>
-            </View> */}
+            </View>
 
             {/* Those 3circular images  */}
             <View style={styles.trio}>
                 <View style={styles.one}>
                     <View style={styles.oneImgC}>
-                        <Image style={styles.oneImg} source={require('../assets/images/ProfilePic2.PNG')} />
+                        <Image style={styles.oneImg} source={require('../assets/images/ProfilePic2.png')} />
                     </View>
                     <View style={styles.oneText}>
-                        <Text style={{color:'#fff',fontSize: 18,}}>@ lady J</Text>
-                        <Text style={{fontWeight:'bold',fontFamily: 'segoe script',color:'#fff'}}>NSE No: ******</Text>
+                        <Text style={{color:'#fff',fontSize: 18,fontFamily: 'segoeScript'}}>@ lady J</Text>
+                        <Text style={{fontWeight:'bold',fontFamily: 'segoeScript',color:'#fff'}}>NSE No: ******</Text>
                     </View>
                 </View>
 
@@ -194,7 +192,7 @@ const styles = StyleSheet.create({
     // logo:{
     //     fontWeight: 'bold',
     //     fontSize: 20,
-    //     fontFamily: 'segoe script',
+    //     fontFamily: 'segoeScript',
     //     marginTop:13,
     //     color: '#fff'
     // },
