@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
-        fontFamily: 'segoeScript',
+        fontFamily: 'segoePrint',
         marginTop:13,
         color: '#fff'
     },

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TextInput, TouchableHighlight,Image } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, TouchableHighlight,Image, Platform } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import { Formik } from 'formik'
 
@@ -26,25 +27,35 @@ const LoginScreen = ({navigation}) => {
           {({ handleChange, handleSubmit, values }) => (
             <View>
               <View style={styles.inputContainer}>
-                <Image style={styles.inputIcon} source={require('../assets/user-512.png')} />
+                <Icon
+                  name={Platform.OS === "ios" ? "ios-person" : "md-person"}
+                  color="#000"
+                  size={25}
+                  style={{marginTop:8, marginLeft:7}}
+                />
                 <TextInput style={styles.inputs} onChangeText={handleChange('username')} value={values.username} placeholder='Username'/>
               </View>
               <View style={styles.inputContainer}>
-                <Image style={styles.inputIcon} source={require('../assets/download.png')} />
+                <Icon
+                    name={Platform.OS === "ios" ? "ios-lock" : "md-lock"}
+                    color="#000"
+                    size={25}
+                    style={{marginTop:8, marginLeft:7}}
+                  />
                 <TextInput style={styles.inputs} placeholder='Password' onChangeText={handleChange('password')} value={values.password} secureTextEntry={true}/>
+              </View>
+
+              <View style={styles.forgotContainer}>
+                <TouchableHighlight 
+                      style={styles.highlightContainer} 
+                      onPress={() => navigation.navigate('ForgotPassword')}>
+                  <Text style={styles.tf}>Forgot Username/Password?</Text>
+                </TouchableHighlight>
               </View>
 
               <View style={styles.login}>
                 <Button title='Log In' style={styles.btn}
                     onPress={handleSubmit}/>
-              </View>
-              <View style={styles.forgotContainer}>
-                <Text style={styles.tf}>Forgot Password?</Text>
-                <TouchableHighlight 
-                      style={styles.highlightContainer} 
-                      onPress={() => navigation.navigate('ForgotPassword')}>
-                  <Text style={styles.ftext}>Get help Signing In</Text>
-                </TouchableHighlight>
               </View>
             </View>
           )}
@@ -55,7 +66,7 @@ const LoginScreen = ({navigation}) => {
               <TouchableHighlight 
                     style={styles.highlightContainer} 
                     onPress={() => navigation.navigate('Register')}>
-                <Text style={styles.ftext}>Sign Up</Text>
+                <Text style={styles.tf}>Sign Up</Text>
               </TouchableHighlight>
             </View>
         </View>
@@ -91,28 +102,25 @@ const LoginScreen = ({navigation}) => {
       borderColor: '#cdcdcd',
       backgroundColor: '#fff',
       borderRadius:12,
-      borderWidth: 2,
-      width:'80%',
-      height:50,
-      marginBottom:22.5,
+      borderWidth: 1,
+      width: 300,
+      marginBottom:10,
       flexDirection: 'row',
       alignSelf:'center'
     },
     inputs:{
       height:45,
-      // borderBottomColor: '#000',
-      flex:1,
-      width: '80%',
-      padding: 15,
+      width: 300,
       color: '#000',
-      fontSize: 25,
+      fontSize: 16,
+      fontFamily: 'minion',
       fontWeight: 'bold',
-      fontFamily: 'verdana',
+      paddingLeft: 5,
   },
   inputIcon:{
     width:30,
     height:30,
-    marginLeft:15,
+    marginLeft:5,
     justifyContent: 'center',
     color: '#000',
     marginTop: 6
@@ -122,24 +130,26 @@ const LoginScreen = ({navigation}) => {
     },
     tf:{
       fontSize: 20,
+      fontFamily: 'minion',
       fontWeight: 'bold',
     },
     ftext:{
       color: '#feef36',
       fontSize: 20,
       fontWeight: 'bold',
+      fontFamily: 'minion',
       letterSpacing: 1,
     },
     forgotContainer:{
       flexDirection:'row',
       justifyContent: 'space-around',
-      // marginTop: -20,
-      padding:10,
+      // padding:10,
     },
     login:{
-      padding:5,
-      width:'40%',
+      padding:25,
+      width:200,
       alignSelf: 'center',
+      marginBottom: 10,
     },
   })
 

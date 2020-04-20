@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text,Button,StyleSheet, TextInput, } from 'react-native'
+import { View, Text,Button,StyleSheet, TextInput, Platform} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { Formik } from 'formik'
 
 const RegForm = () => {
@@ -10,46 +11,66 @@ const RegForm = () => {
             }>
                 {({handleChange,handleSubmit, values}) =>(
                     <View style={styles.align}>
-                            <Text style={styles.labels}> 
-                            Full Name
-                        </Text>
+                        
                         <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} onChangeText={handleChange('name')} value={values.name}/>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-person" : "md-person"}
+                                color="#000"
+                                size={25}
+                                style={{marginTop:8, marginLeft:7}}
+                            />
+                            <TextInput style={styles.inputs} onChangeText={handleChange('name')} value={values.name} placeholder='Full Name'/>
                         </View>
                     
-                        <Text style={styles.labels}>
-                            Email
-                        </Text>
                         <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} keyboardType="email-address" onChangeText={handleChange('email')} value={values.email}/>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-mail" : "md-mail"}
+                                color="#000"
+                                size={25}
+                                style={{marginTop:8, marginLeft:7}}
+                            />
+                            <TextInput style={styles.inputs} placeholder='Email' keyboardType="email-address" onChangeText={handleChange('email')} value={values.email}/>
                         </View>
 
-                        <Text style={styles.labels}>
-                            Password
-                        </Text>
                         <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} secureTextEntry={true} onChangeText={handleChange('password')} value={values.password}/>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-lock" : "md-lock"}
+                                color="#000"
+                                size={25}
+                                style={{marginTop:8, marginLeft:7}}
+                            />
+                            <TextInput style={styles.inputs} placeholder='Password' secureTextEntry={true} onChangeText={handleChange('password')} value={values.password}/>
                         </View>
 
-                        <Text style={styles.labels}>
-                            Department
-                        </Text>
+                        
                         <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} onChangeText={handleChange('department')} value={values.department}/>  
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-business" : "md-business"}
+                                color="#000"
+                                size={25}
+                                style={{marginTop:8, marginLeft:7}}
+                            />
+                            <TextInput style={styles.inputs} placeholder='Department' onChangeText={handleChange('department')} value={values.department}/>  
                         </View>
 
-                        <Text style={styles.labels}>
-                            Matriculation Number
-                        </Text>
                         <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} onChangeText={handleChange('matnumber')} value={values.matnumber}/>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-school" : "md-school"}
+                                color="#000"
+                                size={25}
+                                style={{marginTop:8, marginLeft:7}}
+                            />
+                            <TextInput style={styles.inputs} placeholder='Matric Number' onChangeText={handleChange('matnumber')} value={values.matnumber}/>
                         </View>
 
-                        <Text style={styles.labels}>
-                            NSE Registration Code (Optional)
-                        </Text>
                         <View style={styles.inputContainer}>
-                            <TextInput style={styles.inputs} onChangeText={handleChange('nsecode')} value={values.nsecode}/>
+                            <Icon
+                                name={Platform.OS === "ios" ? "ios-construct" : "md-construct"}
+                                color="#000"
+                                size={25}
+                                style={{marginTop:8, marginLeft:7}}
+                            />
+                            <TextInput style={styles.inputs} placeholder='Nse Registration Code' onChangeText={handleChange('nsecode')} value={values.nsecode}/>
                         </View>
                         <View style={styles.submit}>
                             <Button title='Submit'
@@ -74,32 +95,38 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     align:{
-        alignSelf:'center',
-        width:'80%',
+        marginTop:10,
     },
     inputContainer: {
         borderColor: '#cdcdcd',
-        backgroundColor: '#cdcd',
-        borderRadius:10,
-        borderWidth: 2,
-        width:'100%',
-        height:80,
-        flex: 1,
+        backgroundColor: '#fff',
+        borderRadius:12,
+        borderWidth: 1,
+        width: 300,
         marginBottom:10,
+        flexDirection: 'row',
+        alignSelf:'center'
       },
       inputs:{
-        height:40,
-        padding: 20,
-        color: '#7e7e7e',
-        fontSize: 25,
+        height:45,
+        width: 300,
+        color: '#000',
+        fontSize: 16,
         fontWeight: 'bold',
-        fontFamily: 'verdana',
-        textAlign: 'center',
-        flex: 1,
-      },
+        paddingLeft: 5,
+        fontFamily: 'minion',
+    },
+    inputIcon:{
+      width:30,
+      height:30,
+      marginLeft:5,
+      justifyContent: 'center',
+      color: '#000',
+      marginTop: 6
+    },
       submit:{
         width: 250,
-        alignSelf: 'flex-end',
+        alignSelf: 'center',
         marginBottom: 20,
         padding: 25,
       }

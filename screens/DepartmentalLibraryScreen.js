@@ -34,24 +34,18 @@ const DepartmentalLibraryScreen = props => {
             </View>
 
             {/* Those 3circular images  */}
-            <View style={styles.trio}>
-                <View style={styles.one}>
-                    <View style={styles.oneImgC}>
-                        <Image style={styles.oneImg} source={require('../assets/images/ProfilePic2.png')} />
-                    </View>
-                    <View style={styles.oneText}>
-                        <Text style={{color:'#fff',fontSize: 18,fontFamily: 'segoeScript'}}>@ lady J</Text>
-                        <Text style={{fontWeight:'bold',fontFamily: 'segoeScript',color:'#fff'}}>NSE No: ******</Text>
-                    </View>
-                </View>
-
-                <View style={styles.duo}>
+            {/* <View style={styles.trio}>
+   <View style={styles.duo}>
                     <View style={styles.duoImgC}>
                         <Image style={styles.duoImg} source={require('../assets/images/marbles.jpg')} />
                     </View>
-                </View>
+                    <View style={styles.oneText}>
+                        <Text style={{color:'#fff',fontSize: 18,fontFamily: 'segoeScript'}}>@lady_J</Text>
+                        <Text style={{fontWeight:'bold',fontFamily: 'segoeScript',color:'#fff'}}>NSE No: ******</Text>
+                    </View>
+                </View> */}
 
-                <View style={styles.tre}>
+                {/* <View style={styles.tre}>
                 <View style={styles.treImgC}>
                     <Image style={styles.treImg} source={require('../assets/download.jpg')} />
                 </View>
@@ -71,8 +65,8 @@ const DepartmentalLibraryScreen = props => {
                             />
                         </TouchableHighlight>                   
                     </View>
-                </View>
-            </View>
+                </View> */}
+            {/* </View> */}
 
             {/* Scroll view for the item.  */}
             <ScrollView>
@@ -108,60 +102,6 @@ const DepartmentalLibraryScreen = props => {
                     <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
                         <Image style={styles.Imagescroll} source={require('../assets/department/sexy.jpg')} />
                     </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.scroll} onPress={()=> props.navigation.navigate('/')}>
-                        <Image style={styles.Imagescroll} source={require('../assets/department/1(3).jpg')} />
-                    </TouchableHighlight>
                     
                 </View>
             </View>
@@ -183,112 +123,113 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
       },
-    //   header:{
-    //     flexDirection: 'row',
-    //     justifyContent:'space-between',
-    //     backgroundColor: 'transparent',
-    //     paddingTop: 10,
-    // },
-    // logo:{
-    //     fontWeight: 'bold',
-    //     fontSize: 20,
-    //     fontFamily: 'segoeScript',
-    //     marginTop:13,
-    //     color: '#fff'
-    // },
-    // left:{
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     paddingTop: 10,
-    // },
-    // right:{
-    //     paddingTop: 10,
-    // },
-    // links1:{
-    //     padding:14
-    // },
-    trio:{
+      header:{
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        backgroundColor: 'transparent',
+        paddingTop: 10,
+    },
+    logo:{
+        fontWeight: 'bold',
+        fontSize: 20,
+        fontFamily: 'segoePrint',
+        marginTop:13,
+        color: '#fff'
+    },
+    left:{
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 10,
-        paddingBottom:20,
-        borderBottomColor: '#555555',
-        borderBottomWidth: 2,
-
     },
-    one:{
-        width: '25%',
-        paddingLeft: 8,
-        justifyContent: 'center',
-        alignItems: 'center',
+    right:{
+        paddingTop: 10,
     },
-    oneImgC:{
-        width:80,
-        height:80,
-        borderRadius: 40,
-        overflow: 'hidden',
+    links1:{
+        padding:14
     },
-    oneImg:{
-        height:80,
-        width:80,
-        borderRadius: 40,
-    },
-    duo:{
-        width:'50%',
-        // paddingLeft:27,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    duoImgC:{
-        width:120,
-        height:120,
-        borderRadius: 60,
-    },
-    duoImg:{
-        width:120,
-        height:120,
-        borderRadius: 60,
-    },
-    tre:{
-        width: '25%',
-        paddingRight: 8,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    treImgC:{
-        width:80,
-        height:80,
-        borderRadius: 40,
-        overflow: 'hidden',
-    },
-    treImg:{
-        height:80,
-        width:80,
-        borderRadius: 40,
-    },
-    treIcon:{
-        flexDirection: 'row',
-    },
+    // trio:{
+    //     justifyContent: 'space-between',
+    //     paddingTop: 10,
+    //     paddingBottom:20,
+    //     borderBottomColor: '#555555',
+    //     borderBottomWidth: 2,
+    //     alignSelf: 'center',
+    // },
+    // one:{
+    //     width: '25%',
+    //     paddingLeft: 8,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    // },
+    // oneImgC:{
+    //     width:80,
+    //     height:80,
+    //     borderRadius: 40,
+    //     overflow: 'hidden',
+    // },
+    // oneImg:{
+    //     height:80,
+    //     width:80,
+    //     borderRadius: 40,
+    // },
+    // duo:{
+    //     width:'50%',
+    //     // paddingLeft:27,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    // },
+    // duoImgC:{
+    //     width:120,
+    //     height:120,
+    //     borderRadius: 60,
+    // },
+    // duoImg:{
+    //     width:120,
+    //     height:120,
+    //     borderRadius: 60,
+    // },
+    // tre:{
+    //     width: '25%',
+    //     paddingRight: 8,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    // },
+    // treImgC:{
+    //     width:80,
+    //     height:80,
+    //     borderRadius: 40,
+    //     overflow: 'hidden',
+    // },
+    // treImg:{
+    //     height:80,
+    //     width:80,
+    //     borderRadius: 40,
+    // },
+    // treIcon:{
+    //     flexDirection: 'row',
+    // },
     imgList:{
         paddingTop: 15,
         height:'100%',
         width: '100%',
         borderRadius:10,
-
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     imgcontainer:{
         flexDirection: 'row',
         height:'100%',
-        width:100,
+        width:'100%',
         padding: 6,
+        flexWrap: 'wrap',
     }, 
     scroll:{
         paddingTop: 10,
         paddingLeft:10
     },
     Imagescroll:{
-        height:200,
-        width:180,
+        height:120,
+        width:100,
         borderRadius: 10,
     },
 })

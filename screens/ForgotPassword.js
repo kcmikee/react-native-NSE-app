@@ -16,8 +16,8 @@ const ForgotPassword = () => {
             <View style={styles.inputContainer}>
                 <TextInput style={styles.inputs} keyboardType="email-address" />
             </View>
-            <View style={{width:'20%', alignSelf: 'center',}}>
-                <Button title='submit' onPress={handleSubmit} />
+            <View style={{width:200, alignSelf: 'center',}}>
+                <Button title='Reset Password' onPress={handleSubmit} />
             </View>
             </View>
             )}
@@ -53,28 +53,20 @@ const styles = StyleSheet.create({
     inputContainer: {
         borderColor: '#cdcdcd',
         backgroundColor: '#fff',
-        borderRadius:15,
-        borderWidth: 2,
-        height:50,
-        marginBottom:45,
-        alignSelf: 'center',
+        borderRadius:12,
+        borderWidth: 1,
+        width: 300,
+        marginBottom:10,
+        flexDirection: 'row',
+        alignSelf:'center'
       },
-    inputs:{
-        // width:'80%',
-        alignSelf:'center',
-        height:50,
-        // borderBottomColor: '#000',
-        flex:1,
-        padding: 20,
-        color: '#7e7e7e',
-        backgroundColor: '#fff',
-        borderRadius:15,
-        borderWidth: 2,
-        fontSize: 25,
+      inputs:{
+        height:45,
+        width: 300,
+        color: '#000',
+        fontSize: 16,
         fontWeight: 'bold',
-        fontFamily: 'verdana',
-        textAlign: 'center',
-        justifyContent: 'center',
+        paddingLeft:6,
+        fontFamily: 'minion',
     },
-    
 })

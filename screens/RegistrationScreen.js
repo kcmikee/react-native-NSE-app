@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet, ScrollView,Image,TouchableHighlight, Platform } from 'react-native'
+import { Text, View,StyleSheet, ScrollView,Image,TouchableHighlight, Platform,ImageBackground } from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons"
 import RegForm from '../components/forms/RegForm'
 class RegistrationScreen extends Component {
     render() {
         return (
+            <ImageBackground style={styles.bgImage} source={require('../assets/images/WallpapereLibrary.PNG.png')} >
             <ScrollView >
                 <View style={styles.screen}>
                     {/* background image */}
@@ -18,7 +19,7 @@ class RegistrationScreen extends Component {
                         </TouchableHighlight>
                     {/* top logo */}
                     <View style={styles.logoContainer}>
-                        <Image style={styles.logo} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTqncJNEyYmdQIq8Ola1D3Ev_mhy1O2M0ZDQWdbhnSK1tWgnX4I&usqp=CAU'}} />                    
+                        <Image style={styles.logo} source={require('../assets/download.jpg')} />                    
                         <View>
                             <Text style={styles.logoText}>SIGN UP</Text>
                         </View>
@@ -28,20 +29,19 @@ class RegistrationScreen extends Component {
                     <RegForm />
                 </View>
             </ScrollView>
+            </ImageBackground>
         )
     }
 }
 const styles = StyleSheet.create({
     screen:{
         flex: 1,
-        justifyContent:'center'
+        // justifyContent:'center'
     },
     bgImage:{
         flex: 1,
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        // justifyContent: 'center',
+        justifyContent: 'center',
+        resizeMode: 'cover',
       },
     logoContainer:{
         width: 120,
@@ -70,33 +70,9 @@ const styles = StyleSheet.create({
         color: '#0430ff',
         flex: 1,
     },
-    align:{
-        alignSelf:'center',
-        width:'80%',
-    },
-    inputContainer: {
-        borderColor: '#cdcdcd',
-        backgroundColor: '#cdcd',
-        borderRadius:10,
-        borderWidth: 2,
-        width:'100%',
-        height:80,
-        flex: 1,
-        marginBottom:10,
-      },
-      inputs:{
-        height:40,
-        padding: 20,
-        color: '#7e7e7e',
-        fontSize: 25,
-        fontWeight: 'bold',
-        fontFamily: 'verdana',
-        textAlign: 'center',
-        flex: 1,
-      },
       submit:{
         width: 250,
-        alignSelf: 'flex-end',
+        alignSelf: 'center',
         marginBottom: 20,
         padding: 25,
       }

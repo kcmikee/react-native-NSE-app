@@ -47,19 +47,19 @@ const NewsFeedScreen = ({navigation}) => {
             {/* Tiny NavBar */}
             <View style={styles.nav}>
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
-                    <Text style={{fontWeight:'bold'}}> Just In </Text>
+                    <Text style={{fontWeight:'bold'}} style={{fontFamily: 'minion',}}> Just In </Text>
                 </TouchableHighlight> 
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
-                    <Text> Top Stories </Text>
+                    <Text style={{fontFamily: 'minion',}}> Top Stories </Text>
                 </TouchableHighlight> 
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('Department')}>
-                    <Text> Department </Text>
+                    <Text style={{fontFamily: 'minion',}}> Department </Text>
                 </TouchableHighlight> 
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('/')}>
-                    <Text> Programs </Text>
+                    <Text style={{fontFamily: 'minion',}}> Programs </Text>
                 </TouchableHighlight> 
                 <TouchableHighlight style={styles.navlinks} onPress={()=> navigation.navigate('Community')}>
-                    <Text> Community </Text>
+                    <Text style={{fontFamily: 'minion',}}> Community </Text>
                 </TouchableHighlight> 
                 <Icon
                     name={Platform.OS === "ios" ? "ios-add" : "md-add"}
@@ -79,7 +79,7 @@ const NewsFeedScreen = ({navigation}) => {
                             <Text style={{fontWeight: 'normal', fontFamily: 'minion',}}>The Engineering Body</Text>
                     </View>
                     <View stlye={styles.feedBody}>
-                        <Text style={{textAlign: 'justify',}}> 
+                        <Text style={{textAlign: 'justify', }}> 
                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.ecto ab. Tenetur, libero! Velit aliquid quibusdam quas.
                         </Text>
                     </View>
@@ -531,10 +531,6 @@ const styles = StyleSheet.create({
         paddingBottom:13,
         
     },
-    navlinks:{
-        paddingBottom: 14,
-        paddingTop:5,
-    },
     nav:{
         width:'100%',
         height: 30,
@@ -542,6 +538,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#f0f0f0',
         justifyContent: 'space-evenly',
     },
+    navlinks:{
+        paddingBottom: 14,
+        paddingTop:5,
+        fontFamily: 'minion',
+    },   
     feeds:{
         flexDirection: 'row',
         paddingLeft: 14,
