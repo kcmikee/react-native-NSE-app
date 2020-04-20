@@ -1,8 +1,8 @@
 import React from 'react'
-import {SafeAreaView, StyleSheet, Text, View,Image, ScrollView, TouchableHighlight, Platform } from 'react-native'
+import { Dimensions, StyleSheet, Text, View,Image, ScrollView, TouchableHighlight, Platform } from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons";
 
-
+var width= Dimensions.get('window').width
 const DepartmentalLibraryScreen = props => {
     return (
         
@@ -32,41 +32,6 @@ const DepartmentalLibraryScreen = props => {
                     </TouchableHighlight>
                 </View>
             </View>
-
-            {/* Those 3circular images  */}
-            {/* <View style={styles.trio}>
-   <View style={styles.duo}>
-                    <View style={styles.duoImgC}>
-                        <Image style={styles.duoImg} source={require('../assets/images/marbles.jpg')} />
-                    </View>
-                    <View style={styles.oneText}>
-                        <Text style={{color:'#fff',fontSize: 18,fontFamily: 'segoeScript'}}>@lady_J</Text>
-                        <Text style={{fontWeight:'bold',fontFamily: 'segoeScript',color:'#fff'}}>NSE No: ******</Text>
-                    </View>
-                </View> */}
-
-                {/* <View style={styles.tre}>
-                <View style={styles.treImgC}>
-                    <Image style={styles.treImg} source={require('../assets/download.jpg')} />
-                </View>
-                    <View style={styles.treIcon}>
-                        <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>                           
-                            <Icon
-                                name={Platform.OS === "ios" ? "ios-folder" : "md-folder"}
-                                color="#fff"
-                                size={25}
-                            />
-                        </TouchableHighlight>
-                        <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('/')}>                           
-                            <Icon
-                                name={Platform.OS === "ios" ? "ios-download" : "md-download"}
-                                color="#fff"
-                                size={25}
-                            />
-                        </TouchableHighlight>                   
-                    </View>
-                </View> */}
-            {/* </View> */}
 
             {/* Scroll view for the item.  */}
             <ScrollView>
@@ -147,89 +112,25 @@ const styles = StyleSheet.create({
     links1:{
         padding:14
     },
-    // trio:{
-    //     justifyContent: 'space-between',
-    //     paddingTop: 10,
-    //     paddingBottom:20,
-    //     borderBottomColor: '#555555',
-    //     borderBottomWidth: 2,
-    //     alignSelf: 'center',
-    // },
-    // one:{
-    //     width: '25%',
-    //     paddingLeft: 8,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    // },
-    // oneImgC:{
-    //     width:80,
-    //     height:80,
-    //     borderRadius: 40,
-    //     overflow: 'hidden',
-    // },
-    // oneImg:{
-    //     height:80,
-    //     width:80,
-    //     borderRadius: 40,
-    // },
-    // duo:{
-    //     width:'50%',
-    //     // paddingLeft:27,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    // },
-    // duoImgC:{
-    //     width:120,
-    //     height:120,
-    //     borderRadius: 60,
-    // },
-    // duoImg:{
-    //     width:120,
-    //     height:120,
-    //     borderRadius: 60,
-    // },
-    // tre:{
-    //     width: '25%',
-    //     paddingRight: 8,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    // },
-    // treImgC:{
-    //     width:80,
-    //     height:80,
-    //     borderRadius: 40,
-    //     overflow: 'hidden',
-    // },
-    // treImg:{
-    //     height:80,
-    //     width:80,
-    //     borderRadius: 40,
-    // },
-    // treIcon:{
-    //     flexDirection: 'row',
-    // },
+
     imgList:{
         paddingTop: 15,
-        height:'100%',
-        width: '100%',
-        borderRadius:10,
         justifyContent: 'center',
         alignItems: 'center',
     },
     imgcontainer:{
         flexDirection: 'row',
-        height:'100%',
-        width:'100%',
-        padding: 6,
         flexWrap: 'wrap',
     }, 
     scroll:{
-        paddingTop: 10,
-        paddingLeft:10
+        height:80,
+        width:width/3-10,
+        borderRadius: 10,
+        margin:5
     },
     Imagescroll:{
-        height:120,
-        width:100,
+        height:80,
+        width:width/3-10,
         borderRadius: 10,
     },
 })
