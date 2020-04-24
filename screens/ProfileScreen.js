@@ -183,7 +183,7 @@ links:{
   },
   pro5:{
     borderWidth: 1,
-    borderColor:'#bebeb',
+    borderColor:'#bebebe',
     width:200,
     backgroundColor:'transparent',
     padding:6
