@@ -1,11 +1,25 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button, Image,TextInput } from 'react-native'
+import { StyleSheet, Text, View, Button, Image,TextInput, Platform,TouchableHighlight} from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { Formik } from 'formik'
 
-const ForgotPassword = () => {
+const ForgotPassword = (props) => {
     return (
         <View style={styles.screen}>
             <Image style={styles.bgImage} source={require('../assets/pencil.jpg')} />
+            <View style={styles.header}>
+                <View style={styles.left}>
+                    <TouchableHighlight style={styles.links1} onPress={()=> props.navigation.navigate('Login')}>
+                        <Icon
+                            name={Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"}
+                            color="#fff"
+                            size={25}
+                        />
+                    </TouchableHighlight>
+                    <Text onpress={()=> props.navigation.navigate('Login')} style={styles.logo}>Forgot Password</Text> 
+                </View>               
+            </View>
+            <View  style={styles.formik}>
           <Formik 
             initialValues={{ email: '' }}
             onSubmit={values => console.log(values)}
@@ -22,6 +36,7 @@ const ForgotPassword = () => {
             </View>
             )}
           </Formik>
+          </View>
         </View>
     )
 }
@@ -31,8 +46,7 @@ export default ForgotPassword
 const styles = StyleSheet.create({
     screen:{
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        
     },
     bgImage:{
         flex: 1,
@@ -41,8 +55,33 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
     },
+    header:{
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        paddingTop: 10,
+    },
+    logo:{
+        fontWeight: 'bold',
+        fontSize: 20,
+        fontFamily: 'segoePrint',
+        marginTop:13,
+        color: '#fff'
+    },
+    links1:{
+        padding:14
+    },
+    left:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingTop: 10,
+    },
+    formik:{
+        flex:1,
+        alignSelf: 'center',
+        justifyContent: 'center',
+    },
     label:{
-        marginTop: -100,
+        // marginTop: -100,
         marginBottom: 20,
         fontSize: 25,
         fontFamily: 'segoePrint',

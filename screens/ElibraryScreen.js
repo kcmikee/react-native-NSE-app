@@ -11,14 +11,7 @@ const ElibraryScreen = ({navigation}) => {
                 {/* Top Nav */}
                 <View style={styles.topnav}>
                     <View style={styles.leftHeader}>
-                        <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('Newsfeed')}>
-                            <Icon
-                                name={Platform.OS === "ios" ? "ios-undo" : "md-undo"}
-                                color="#fff"
-                                size={25}
-                            />
-                        </TouchableHighlight>
-                        <Text onpress={()=> navigation.navigate('/')} style={styles.logo}>eHUB</Text> 
+                        <Text onpress={()=> navigation.navigate('/')} style={styles.logo}>E-Library</Text> 
                     </View>
                     <View style={styles.rightHeader}>
                         <TouchableHighlight style={styles.links} onPress={()=> navigation.navigate('/')}>
@@ -298,36 +291,39 @@ const styles = StyleSheet.create({
     topnav:{
         flexDirection: 'row',
         justifyContent:'space-between',
+        backgroundColor:'transparent'
     },
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
-        fontFamily: 'segoeScript',
-        marginTop:15,
+        fontFamily: 'segoePrint',
+        // marginTop:15,
+        marginLeft:10,
         color: '#fff'
     },
     leftHeader:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 20,
+        padding: 10,
     },
     rightHeader:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 25,
+        padding: 5,
     },
     links:{
         padding: 14,
     },
     elib:{
         flexDirection: 'row',
-        borderRadius:15,
         borderColor:'#fff',
-        borderWidth: 1,
+        borderWidth: 2,
+        top:15,
     },
     flatImg:{
         width: "80%",
         height:65,
+        borderRadius:15,
 
     },
     flatIcon:{
@@ -338,6 +334,7 @@ const styles = StyleSheet.create({
         flex:1, 
         resizeMode: 'cover',
         justifyContent: 'center',
+        borderRadius:15
     },
     libs:{
         color:'grey',

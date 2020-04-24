@@ -26,6 +26,7 @@ export function DrawerContent(props){
                         </View>
                     </View>
                     {/* Contains the Profile section */}
+                    <TouchableHighlight onPress={()=> props.navigation.navigate('Profile')}>
                     <View style={styles.mid}>
                         <Image style={styles.midImage} source={require('../assets/images/ProfilePic2.png')} />
                         <View style={styles.nse}>
@@ -50,6 +51,7 @@ export function DrawerContent(props){
                             </View>
                         </View>
                     </View>
+                    </TouchableHighlight>
                     {/* Contains the links */}
                     <View styles={styles.list}>
                         <DrawerItem style={{borderBottomWidth:1, borderBottomColor:'#bebebe'}}

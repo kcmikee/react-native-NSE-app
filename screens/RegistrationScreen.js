@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     },
     bgImage:{
         flex: 1,
-        justifyContent: 'center',
-        resizeMode: 'cover',
+        width:'100%',
+        height:'100%'
       },
     logoContainer:{
         width: 120,

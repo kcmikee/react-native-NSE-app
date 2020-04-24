@@ -12,30 +12,16 @@ const FupreCommunityScreen = ({navigation}) => {
             {/* Header:Back button, Title and the rest */}
             <View style={styles.header}>
                 <View style={styles.left}>
-                    <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('Newsfeed')}>
+                    {/* <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('Newsfeed')}>
                         <Icon
                             name={Platform.OS === "ios" ? "ios-arrow-back" : "md-arrow-back"}
                             color="#fff"
                             size={25}
                         />
-                    </TouchableHighlight>
+                    </TouchableHighlight> */}
                     <Text onpress={()=> navigation.navigate('/')} style={styles.logo}>eHUB Community</Text> 
                 </View>
                 <View style={styles.right}>
-                    {/* <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
-                        <Icon
-                            name={Platform.OS === "ios" ? "ios-folder" : "md-folder"}
-                            color="#fff"
-                            size={25}
-                        />
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
-                        <Icon
-                            name={Platform.OS === "ios" ? "ios-download" : "md-download"}
-                            color="#fff"
-                            size={25}
-                        />
-                    </TouchableHighlight> */}
                     <TouchableHighlight style={styles.links1} onPress={()=> navigation.navigate('/')}>                           
                         <Icon
                             name={Platform.OS === "ios" ? "ios-notifications" : "md-notifications"}
@@ -283,25 +269,28 @@ const styles = StyleSheet.create({
       header:{
         flexDirection: 'row',
         justifyContent:'space-between',
+        // backgroundColor: '#fff',
         backgroundColor: 'transparent',
-        paddingTop: 10,
-        borderBottomColor: '#747474',
+        paddingTop: 5,
+        borderBottomColor: '#bebebe',
         borderBottomWidth:2
     },
     logo:{
         fontWeight: 'bold',
         fontSize: 20,
         fontFamily: 'segoePrint',
-        marginTop:13,
-        color: '#fff'
+        // marginTop:13,
+        // color: '#000',
+        color:'#fff',
+        marginLeft:10
     },
     left:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: 10,
+        paddingTop: 5,
     },
     right:{
-        paddingTop: 10,
+        // paddingTop: 5,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
@@ -326,7 +315,7 @@ const styles = StyleSheet.create({
         marginTop: 1,
         borderRadius: 30,
         padding: 10,
-        borderColor:'#747474',
+        borderColor:'#fff',
         borderWidth: 2,
     },
     listText:{
