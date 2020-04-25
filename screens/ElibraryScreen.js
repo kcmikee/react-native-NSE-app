@@ -299,17 +299,20 @@ const styles = StyleSheet.create({
         fontFamily: 'segoePrint',
         // marginTop:15,
         marginLeft:10,
+        paddingTop: 13,
         color: '#fff'
     },
     leftHeader:{
         flexDirection: 'row',
         justifyContent: 'space-between',
+        paddingTop: 10,
         padding: 10,
     },
     rightHeader:{
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: 5,
+        paddingTop: 10,
     },
     links:{
         padding: 14,
@@ -318,7 +321,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderColor:'#fff',
         borderWidth: 2,
-        top:15,
+        top:2,
     },
     flatImg:{
         width: "80%",

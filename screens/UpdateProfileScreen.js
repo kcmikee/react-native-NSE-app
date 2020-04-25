@@ -14,22 +14,22 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { Formik } from 'formik'
 
 
-const UpdateProfileScreen = () => {
+const UpdateProfileScreen = props => {
   return (
     <View style={styles.screen}>
-      {/* <Image style={styles.bgImage} source={require('../assets/images/WallpapereLibrary.PNG.png')} /> */}
+      <Image style={styles.bgImage} source={require('../assets/images/WALLPAPER.png')} />
       <View style={styles.topnav}>
         <View style={styles.leftHeader}>
-          {/* <TouchableHighlight
+          <TouchableHighlight
             style={styles.links}
-            onPress={() => navigation.navigate("/")}
+            onPress={() => props.navigation.navigate("Profile")}
           >
             <Icon
               name={Platform.OS === "ios" ? "ios-close" : "md-close"}
               color="red"
               size={25}
-            /> */}
-          {/* </TouchableHighlight> */}
+            />
+          </TouchableHighlight>
           <Text onpress={() => navigation.navigate("/")} style={styles.logo}>
             Edit Profile
           </Text>
@@ -86,6 +86,7 @@ const UpdateProfileScreen = () => {
                     onChangeText={handleChange("name")}
                     value={values.name}
                     placeholder="Full Name"
+                    placeholderTextColor="#000"
                   />
                 </View>
 
@@ -102,6 +103,7 @@ const UpdateProfileScreen = () => {
                     keyboardType="email-address"
                     onChangeText={handleChange("email")}
                     value={values.email}
+                    placeholderTextColor="#000"
                   />
                 </View>
 
@@ -118,6 +120,7 @@ const UpdateProfileScreen = () => {
                     placeholder="Bio"
                     onChangeText={handleChange("bio")}
                     value={values.bio}
+                    placeholderTextColor="#000"
                   />
                 </View>
 
@@ -135,6 +138,7 @@ const UpdateProfileScreen = () => {
                     placeholder="Department"
                     onChangeText={handleChange("department")}
                     value={values.department}
+                    placeholderTextColor="#000"
                   />
                 </View>
 
@@ -149,6 +153,7 @@ const UpdateProfileScreen = () => {
                     style={styles.inputs}
                     placeholder="Matric Number"
                     onChangeText={handleChange("matnumber")}
+                    placeholderTextColor="#000"
                     value={values.matnumber}
                   />
                 </View>
@@ -167,6 +172,7 @@ const UpdateProfileScreen = () => {
                     placeholder="Nse Registration Code"
                     onChangeText={handleChange("nsecode")}
                     value={values.nsecode}
+                    placeholderTextColor="#000"
                   />
                 </View>
                 <View style={styles.submit}>
@@ -186,6 +192,7 @@ export default UpdateProfileScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    // backgroundColor:'#e2e2e2'
   },
   bgImage: {
     flex: 1,
@@ -205,13 +212,15 @@ const styles = StyleSheet.create({
     fontFamily: "segoePrint",
     // marginTop:15,
     marginLeft: 10,
-    marginTop:4,
+    marginTop:10,
     color: "#000",
   },
   leftHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 5,
+    paddingTop:10
+
   },
   rightHeader: {
     flexDirection: "row",

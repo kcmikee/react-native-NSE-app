@@ -135,7 +135,7 @@ const DepartmentalLibraryScreen = (props) => {
                             >
                                 <Image
                                     style={styles.Imagescroll}
-                                    source={require("../assets/department/sexy.jpg")}
+                                    source={require("../assets/department/1(5).jpg")}
                                 />
                             </TouchableHighlight>
                             <View style={styles.author}>

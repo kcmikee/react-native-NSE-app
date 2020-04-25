@@ -198,7 +198,6 @@ const styles =StyleSheet.create({
     header:{
         flexDirection: 'row',
         justifyContent:'space-between',
-        paddingTop:15,
         marginBottom: 10,
     },
     logo:{
@@ -210,7 +209,7 @@ const styles =StyleSheet.create({
     left:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingLeft:10,
+        paddingLeft:5,
     },
     right:{
         paddingRight: 30,

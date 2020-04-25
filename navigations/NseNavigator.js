@@ -16,6 +16,7 @@ import FupreCommunityScreen from '../screens/FupreCommunityScreen'
 import ForgotPassword from '../screens/ForgotPassword'
 import ProfileScreen from '../screens/ProfileScreen'
 import UpdateProfileScreen from '../screens/UpdateProfileScreen'
+import Views from '../screens/Views'
 
 import {DrawerContent } from '../shared/drawer'
 
@@ -24,6 +25,7 @@ const Stack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const Tab = createBottomTabNavigator(); 
 const Final = createStackNavigator();
+const FeedStack =createStackNavigator();
 
 const HomeStackScreen = ({navigation}) =>(
         <Stack.Navigator >
@@ -43,6 +45,22 @@ const HomeStackScreen = ({navigation}) =>(
                         options={{headerShown: false}}
                         />    
         </Stack.Navigator>
+);
+const Comments = ({navigation})=>(
+    <FeedStack.Navigator>
+        <FeedStack.Screen name='Newsfeed' 
+                component={DrawerNavigation}
+                options={{headerShown: false}}
+        />
+        <FeedStack.Screen name='Views' 
+                component={Views}
+                options={{headerShown: false}}
+        />
+        <FeedStack.Screen name='Update' 
+                component={UpdateProfileScreen}
+                options={{headerShown: false}}
+        />
+    </FeedStack.Navigator>
 );
 const FeedTabNavigator =({navigation})=>(
     <Tab.Navigator 
@@ -79,7 +97,7 @@ const FeedTabNavigator =({navigation})=>(
     >
         <Tab.Screen name='Newsfeed' 
                 component={NewsFeedScreen}
-                options={{headerShown: false}}
+                options={{headerShown: false}}                
         />
         <Tab.Screen 
                 name="Community" 
@@ -107,7 +125,6 @@ const FeedTabNavigator =({navigation})=>(
 const ProfileSK = ({navigation})=>(
     <ProfileStack.Navigator>
         <ProfileStack.Screen name='Profile' component={ProfileScreen} options={{headerShown:false}}/>
-        <ProfileStack.Screen name='Update' component={UpdateProfileScreen} options={{headerShown:false}}/>
     </ProfileStack.Navigator>
 );
 
@@ -120,6 +137,7 @@ const DrawerNavigation =({navigation}) => (
         </Drawer.Navigator>
 );
 
+
 const NseNavigator = () =>{
     return(
         <NavigationContainer>
@@ -131,7 +149,7 @@ const NseNavigator = () =>{
                 />
                 <Final.Screen
                     name='Newsfeed' 
-                    component={DrawerNavigation}
+                    component={Comments}
                     options={{headerShown: false}}
                 />
             </Final.Navigator>
